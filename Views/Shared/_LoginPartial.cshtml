@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+
+
+    <ul class="navbar-nav ms-auto ">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Admin" asp-action="AdminDashboard">Admin Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Admin" asp-action="RoleList">Role List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Admin" asp-action="UserList">Users List</a>
+                </li>
+            }
+            else if (User.IsInRole("Teacher"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Teacher" asp-action="ManageStudent">Manage Students</a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Teacher" asp-action="Result9">9th Results</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Teacher" asp-action="Results">10th Results</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Teacher" asp-action="StaffManage">Manage Staff</a>
+            </li>
+
+            
+            }
+            <li class="nav-item">
+                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-link nav-link">Logout</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+            </li>
+        }
+    </ul>
+

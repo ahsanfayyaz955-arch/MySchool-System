@@ -1,0 +1,28 @@
+﻿@model MySchool_System.Models.Result
+
+@{
+    ViewData["Title"] = "Add Result";
+}
+
+<div class="container my-4">
+    <h2 class="mb-3">➕ Add Result</h2>
+
+    <form asp-action="AddResult" method="post">
+        <input type="hidden" asp-for="StudentId" value="@ViewBag.StudentId" />
+
+        <div class="mb-3">
+            <label asp-for="Subject" class="form-label"></label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Marks" class="form-label"></label>
+            <input asp-for="Marks" class="form-control" type="number" />
+            <span asp-validation-for="Marks" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a asp-action="ManageResults" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

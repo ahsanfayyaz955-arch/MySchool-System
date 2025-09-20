@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<!-- ✅ Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="container my-5">
+    <div class="p-5 bg-light rounded shadow-lg animate__animated animate__fadeIn">
+        <h1 class="display-5 fw-bold text-primary mb-4">@ViewData["Title"]</h1>
+        <p class="text-muted fst-italic">
+            Last updated: @DateTime.Now.ToString("MMMM dd, yyyy")
+        </p>
+
+        <hr />
+
+        <!-- Section 1 -->
+        <div class="mb-4 animate__animated animate__fadeInUp">
+            <h4 class="fw-bold text-dark">📌 Information We Collect</h4>
+            <p>
+                We may collect personal information such as name, email, and usage data
+                to provide better services. All data is handled securely.
+            </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <h4 class="fw-bold text-dark">🔐 How We Use Your Information</h4>
+            <p>
+                Your information is only used for account management, system improvements,
+                and ensuring a personalized experience.
+            </p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <h4 class="fw-bold text-dark">🤝 Sharing & Disclosure</h4>
+            <p>
+                We never sell your personal data. Information is only shared with trusted
+                service providers or when legally required.
+            </p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="mb-4 animate__animated animate__fadeInUp animate__delay-3s">
+            <h4 class="fw-bold text-dark">⚙️ Your Rights</h4>
+            <p>
+                You can request to access, update, or delete your personal information at any time
+                by contacting our support team.
+            </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="mt-5 p-4 bg-white border rounded shadow-sm">
+            <h5 class="fw-bold">📩 Contact Us</h5>
+            <p>
+                If you have any questions about this Privacy Policy,
+                please <a href="/Home/Contact" class="text-primary fw-bold">contact us</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ Extra Styling -->
+<style>
+    h4 {
+        border-left: 5px solid #007bff;
+        padding-left: 10px;
+    }
+
+    .container p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+</style>

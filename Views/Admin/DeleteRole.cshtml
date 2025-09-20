@@ -1,0 +1,24 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole
+
+<div class="container mt-3">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Massege!</strong> @TempData["Success"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <h2>Delete Role</h2>
+    <div class="alert alert-warning">
+        Are you sure you want to delete the role: <strong>@Model.Name</strong> ?
+    </div>
+
+    <form asp-action="DeleteRole" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="RoleList" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+

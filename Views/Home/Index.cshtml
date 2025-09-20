@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- ✅ Animate.css link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="container text-center my-5">
+
+    <!-- Hero Section -->
+    <div class="p-5 bg-gradient rounded shadow-lg text-white animate__animated animate__fadeIn"
+         style="background: linear-gradient(135deg, #007bff, #6610f2);">
+        <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">🎓 Welcome to MySchool System</h1>
+        <p class="lead mt-3 animate__animated animate__fadeInUp">Manage Students, Teachers & Roles with ease.</p>
+        <a href="/Account/Register" class="btn btn-light btn-lg mt-4 fw-bold text-black  shadow-lg
+           animate__animated animate__pulse animate__infinite ">🚀 Get Started</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5 g-4">
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <h3 class="fw-bold">👨‍🎓 Student Management</h3>
+                    <p class="text-muted fw-bold ">Easily add, update, and manage student records with a clean UI.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="card-body">
+                    <h3 class="fw-bold">👩‍🏫 Teacher Management</h3>
+                    <p class="text-muted fw-bold ">Track teacher info, assign subjects & monitor performance quickly.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="card-body">
+                    <h3 class="fw-bold">⚙️ Role Based Access</h3>
+                    <p class="text-muted fw-bold ">Secure role-based login for Admin & Users with Identity integration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ Extra Styling -->
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 1rem;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+    .btn-light:hover {
+        background-color: #f8f9fa;
+        color: #000;
+        transform: scale(1.05);
+    }
+</style>

@@ -1,0 +1,63 @@
+﻿@model MySchool_System.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="col-12 col-md-8 col-lg-5">
+
+        <!-- Login Card -->
+        <div class="card bg-dark text-white shadow-lg rounded-4">
+            <div class="card-body p-4">
+                <h2 class="text-center mb-4">🔐 Login</h2>
+
+                <!-- ✅ TempData Alert -->
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Message!</strong> @TempData["Message"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <form asp-action="Login" asp-controller="Account" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" type="email"
+                               class="form-control bg-transparent text-white fw-bold  border-light"
+                               placeholder="Enter your email"  />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" type="password"
+                               class="form-control bg-transparent text-white fw-bold  border-light"
+                               placeholder="Enter your password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <!-- Create Account link -->
+                    <p class="text-center mb-3">
+                        Don’t have an account?
+                        <a asp-controller="Account" asp-action="Register"
+                           class="text-info text-decoration-none fw-bold">Register</a>
+                    </p>
+
+                    <!-- Submit -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

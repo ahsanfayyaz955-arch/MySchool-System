@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Teacher Dashboard";
+}
+
+<!-- ✅ Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="container my-5">
+    <!-- Welcome Section -->
+    <div class="p-5 mb-5 rounded shadow-lg text-white animate__animated animate__fadeIn"
+         style="background: linear-gradient(135deg, #0d6efd, #6610f2);">
+        <h1 class="display-5 fw-bold">👩‍🏫 Welcome, Teacher!</h1>
+        <p class="lead">Manage your students, track results, and monitor classes with ease.</p>
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp">
+                <div class="card-body text-center">
+                    <h3 class="fw-bold">📚 Manage Students</h3>
+                    <p class="text-muted">View, edit and manage your students list.</p>
+                    <a asp-action="ManageStudent" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="card-body text-center">
+                    <h3 class="fw-bold">📝 Manage Results</h3>
+                    <p class="text-muted">Add or update student marks and generate result cards.</p>
+                    <a href="#" class="btn btn-success">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="card-body text-center">
+                    <h3 class="fw-bold">📅 Attendance</h3>
+                    <p class="text-muted">Mark daily attendance and monitor reports.</p>
+                    <a href="#" class="btn btn-warning text-white">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extra Features -->
+    <div class="row mt-5 g-4">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInLeft">
+                <div class="card-body">
+                    <h4 class="fw-bold">📊 Performance Overview</h4>
+                    <p class="text-muted">Track students' academic progress and generate reports.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInRight">
+                <div class="card-body">
+                    <h4 class="fw-bold">📩 Messages & Notifications</h4>
+                    <p class="text-muted">Stay updated with important announcements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ Extra Styling -->
+<style>
+    .card {
+        border-radius: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+</style>

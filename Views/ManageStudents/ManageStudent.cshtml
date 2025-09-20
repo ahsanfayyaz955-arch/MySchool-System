@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MySchool_System.Models.Student>
+
+<h2>Manage Students</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Class</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.RollNumber</td>
+                <td>@s.Name</td>
+                <td>@s.Email</td>
+                <td>@s.Class </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
